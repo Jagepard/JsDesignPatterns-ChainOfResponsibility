@@ -3,14 +3,12 @@
  * @license https://mit-license.org/ MIT
  */
 
-module.exports = {
-    create: function(name) {
-        return {
-            name : name, 
+module.exports = function(name) {
+    return {
+        name : name, 
 
-            execute : function() {
-                console.log(this.name)
-            }
+        execute : function() {
+            console.log(this.name)
         }
     }
 }
