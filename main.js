@@ -6,9 +6,9 @@
 const Chain = require('./Chain')
 const Handler = require('./Handler')
 
-const NoticeHandler = Handler.create("NoticeHandler")
-const WarningHandler = Handler.create("WarningHandler")
-const ErrorHandler = Handler.create("ErrorHandler")
+const NoticeHandler = new Handler("NoticeHandler")
+const WarningHandler = new Handler("WarningHandler")
+const ErrorHandler = new Handler("ErrorHandler")
 
 try {
     Chain.addToChain(NoticeHandler)
