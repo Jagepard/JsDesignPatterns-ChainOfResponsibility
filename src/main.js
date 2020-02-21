@@ -1,24 +1,25 @@
-"use strict";
-
 /**
  * @author  : Jagepard <jagepard@yandex.ru>
  * @license https://mit-license.org/ MIT
  */
 
 import Chain from './Chain';
-import Handler from './Handler';
+import NoticeHandler from './NoticeHandler';
+import WarningHandler from './WarningHandler';
+import ErrorHandler from './ErrorHandler';
 
-const NoticeHandler = new Handler("NoticeHandler");
-const WarningHandler = new Handler("WarningHandler");
-const ErrorHandler = new Handler("ErrorHandler");
+const chain = new Chain();
+const noticeHandler = new NoticeHandler("NoticeHandler");
+const warningHandler = new WarningHandler("WarningHandler");
+const errorHandler = new ErrorHandler("ErrorHandler");
 
 try {
-    Chain.addToChain(NoticeHandler);
-    Chain.addToChain(WarningHandler);
-    Chain.addToChain(ErrorHandler);
-    Chain.execute(NoticeHandler.name);
-    Chain.execute(WarningHandler.name);
-    Chain.execute(ErrorHandler.name);
+    chain.addToChain(noticeHandler);
+    chain.addToChain(warningHandler);
+    chain.addToChain(errorHandler);
+    chain.execute(noticeHandler.name);
+    chain.execute(warningHandler.name);
+    chain.execute(errorHandler.name);
 } catch (e) {
     console.error(e);
 }
