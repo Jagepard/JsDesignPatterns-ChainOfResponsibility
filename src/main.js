@@ -13,12 +13,12 @@ const WarningHandler = new Handler("WarningHandler");
 const ErrorHandler = new Handler("ErrorHandler");
 
 try {
-  Chain.addToChain(NoticeHandler);
-  Chain.addToChain(WarningHandler);
-  Chain.addToChain(ErrorHandler);
-  Chain.execute(NoticeHandler.name);
-  Chain.execute(WarningHandler.name);
-  Chain.execute(ErrorHandler.name);
+    Chain.addToChain(NoticeHandler);
+    Chain.addToChain(WarningHandler);
+    Chain.addToChain(ErrorHandler);
+    Chain.execute(NoticeHandler.name);
+    Chain.execute(WarningHandler.name);
+    Chain.execute(ErrorHandler.name);
 } catch (e) {
-  console.error(e);
+    console.error(e);
 }
