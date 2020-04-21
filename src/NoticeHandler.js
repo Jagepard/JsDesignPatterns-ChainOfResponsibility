@@ -1,11 +1,11 @@
-import Handler from './Handler';
+import AbstractHandler from './AbstractHandler';
 
 /**
  * @author  : Jagepard <jagepard@yandex.ru>
  * @license https://mit-license.org/ MIT
  */
 
-class NoticeHandler extends Handler {
+class NoticeHandler extends AbstractHandler {
 
 }
 
