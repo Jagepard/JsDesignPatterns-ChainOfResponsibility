@@ -8,11 +8,9 @@ import WarningHandler from './WarningHandler';
 import ErrorHandler from './ErrorHandler';
 
 const noticeHandler = new NoticeHandler("NoticeHandler");
-const warningHandler = new WarningHandler("WarningHandler");
-const errorHandler = new ErrorHandler("ErrorHandler");
 
 try {
-    noticeHandler.setNext(warningHandler).setNext(errorHandler);
+    noticeHandler.setNext(new WarningHandler("WarningHandler")).setNext(new ErrorHandler("ErrorHandler"));
     noticeHandler.execute("NoticeHandler");
     noticeHandler.execute("WarningHandler");
     noticeHandler.execute("ErrorHandler");
